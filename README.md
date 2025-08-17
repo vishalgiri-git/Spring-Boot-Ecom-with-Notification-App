@@ -10,7 +10,8 @@ The system is composed of two main services:
 ---
 ### High-Level Architecture Diagram
 
-![Architecture Diagram](images/img.png)
+<img width="1322" height="576" alt="image" src="https://github.com/user-attachments/assets/e8fb3a8a-1c71-4b4d-8d6c-5bd7e2c497d1" />
+
 
 
 ## 🚀 Features
