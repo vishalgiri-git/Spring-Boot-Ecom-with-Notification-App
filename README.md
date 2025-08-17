@@ -12,6 +12,9 @@ The system is composed of two main services:
 2.  **Notification Service**: A dedicated service for sending notifications (like email or SMS) to users in response to events within the platform.
 
 ---
+### High-Level Architecture Diagram
+
+![img.png](img.png)
 
 ## 🚀 Features
 
