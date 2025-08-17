@@ -4,10 +4,6 @@
 ```markdown
 # E-commerce Application with Notification Service
 
-![Java](https://img.shields.io/badge/Java-17-blue)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
-![Maven](https://img.shields.io/badge/Maven-3.8-red)
-![License](https://img.shields.io/badge/License-MIT-yellow)
 
 A microservices-based application for a modern e-commerce platform. This repository contains the backend services built with Java and Spring Boot, structured as a monorepo.
 
