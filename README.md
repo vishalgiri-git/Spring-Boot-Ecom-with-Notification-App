@@ -14,7 +14,8 @@ The system is composed of two main services:
 ---
 ### High-Level Architecture Diagram
 
-![img.png](img.png)
+![Architecture Diagram](images/img.png)
+
 
 ## 🚀 Features
 
