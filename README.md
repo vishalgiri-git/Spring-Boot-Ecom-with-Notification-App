@@ -12,6 +12,17 @@ The system is composed of two main services:
 
 <img width="1322" height="576" alt="image" src="https://github.com/user-attachments/assets/e8fb3a8a-1c71-4b4d-8d6c-5bd7e2c497d1" />
 
+---
+
+## ⚡ Performance Optimizations
+
+To enhance the scalability and responsiveness of the application, several optimization techniques have been integrated:
+
+- **Pagination**: Efficiently handles large datasets in APIs by limiting the number of records returned per request.
+- **Indexing**: Database indexing applied to frequently queried fields to speed up data retrieval.
+- **Redis Cache**: Implements caching layer using Redis to reduce database load and improve response times for commonly accessed data.
+
+---
 
 
 ## 🚀 Features
@@ -33,14 +44,12 @@ The system is composed of two main services:
 ## 🛠️ Tech Stack
 
 * **Backend**: Java 17, Spring Boot 3
-* **Data**: Spring Data JPA, Hibernate, PostgreSQL / MySQL
+* **Data**: Spring Data JPA, Hibernate, MySQL
 * **Messaging Queue**: Apache Kafka
 * **Security**: Spring Security
 * **Build Tool**: Maven
-* **(Frontend)**: React (as indicated by the original project name)
+* **(Frontend)**: React 
 
 ---
 
-## 📦 Project Structure
 
-This is a monorepo containing two independent Spring Boot applications.
