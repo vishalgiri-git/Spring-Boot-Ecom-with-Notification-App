@@ -13,41 +13,45 @@ const Product = () => {
   let userid = localStorage.getItem("userid");
 
   const filterProducts = (category, priceOrder, nameSearch, data) => {
-    let filteredProducts = data;
+    let filtered = Array.isArray(data) ? [...data] : [];
 
     if (category !== "All") {
-      filteredProducts = filteredProducts.filter(
+      filtered = filtered.filter(
         (product) => product.category === category
       );
     }
-    
+
     if (priceOrder === "LowToHigh") {
-      filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
+      filtered = filtered.sort((a, b) => a.price - b.price);
     } else if (priceOrder === "HighToLow") {
-      filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
+      filtered = filtered.sort((a, b) => b.price - a.price);
     }
 
     if (nameSearch !== "") {
       const searchQuery = nameSearch.toLowerCase();
-      filteredProducts = filteredProducts.filter((product) =>
+      filtered = filtered.filter((product) =>
         product.name.toLowerCase().includes(searchQuery)
       );
     }
 
-    setFilteredProducts(filteredProducts);
+    setFilteredProducts(filtered);
   };
 
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8080/ecom/products/all")
-      .then((response) => {
-        setProducts(response.data);
-        filterProducts(selectedCategory, priceOrder, nameSearch, response.data);
+    fetch('http://127.0.0.1:8080/ecom/products/all')
+      .then(res => res.json())
+      .then(data => {
+        setProducts(data);
+        setFilteredProducts(data);
       })
       .catch((error) => {
         console.error("Error fetching data from the API: ", error);
       });
-  }, [selectedCategory, priceOrder, nameSearch]);
+  }, []);
+
+  useEffect(() => {
+    filterProducts(selectedCategory, priceOrder, nameSearch, products);
+  }, [selectedCategory, priceOrder, nameSearch, products]);
 
   const addProductToCart = (productid) => {
     api
@@ -112,7 +116,7 @@ const Product = () => {
       </div>
 
       <div className="product-list">
-        {filteredProducts.length === 0 ? (
+        {Array.isArray(filteredProducts) && filteredProducts.length === 0 ? (
           <h1
             style={{
               textAlign: "center",
@@ -124,7 +128,7 @@ const Product = () => {
             Product Not found ....
           </h1>
         ) : (
-          filteredProducts.map((product) => (
+          (Array.isArray(filteredProducts) ? filteredProducts : []).map((product) => (
             <div className="product-card" key={product.productId}>
               <div className="product-image1">
                 <img src={product.imageUrl} alt={product.name} />
@@ -140,11 +144,10 @@ const Product = () => {
                 </p>
                 <h2 className="product-price">Price: ₹ {product.price}</h2>
                 <p>
-                  {" "}
                   <strong>Rating :</strong>
-                  {product.reviews.length === 0
+                  {Array.isArray(product.reviews) && product.reviews.length === 0
                     ? "Not Available"
-                    : product.reviews[0].rating}
+                    : (product.reviews && product.reviews[0]?.rating)}
                 </p>
 
                 <div>
