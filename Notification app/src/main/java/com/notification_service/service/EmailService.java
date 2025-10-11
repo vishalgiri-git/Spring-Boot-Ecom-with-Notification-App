@@ -7,5 +7,4 @@ public interface EmailService {
 
     void sendWelcomEmail(String to, String sub, String name) ;
 
-
 }
