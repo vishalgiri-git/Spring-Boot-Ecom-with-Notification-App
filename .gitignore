@@ -1,0 +1,22 @@
+# Ignore all target directories globally
+target/
+# Allow target in eCommersApp directory
+!eCommerce-Application-main/eCommersApp/target/
+
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
+# Allow build folders in eCommersApp directory
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IDE-specific files and directories
+.idea
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+
+# Exclude node_modules (if any)
+node_modules/
