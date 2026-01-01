@@ -9,7 +9,7 @@ target/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-# IDE-specific files and directories
+# IDE-specific files and directories (Global)
 .idea
 *.iws
 *.iml
@@ -18,5 +18,33 @@ target/
 # VS Code
 .vscode/
 
-# Exclude node_modules (if any)
+# Exclude node_modules (if any, for frontend projects)
 node_modules/
+
+# Specific rules for eCommersApp directory
+
+### STS ###
+eCommerce-Application-main/eCommersApp/.apt_generated
+eCommerce-Application-main/eCommersApp/.classpath
+eCommerce-Application-main/eCommersApp/.factorypath
+eCommerce-Application-main/eCommersApp/.project
+eCommerce-Application-main/eCommersApp/.settings
+eCommerce-Application-main/eCommersApp/.springBeans
+eCommerce-Application-main/eCommersApp/.sts4-cache
+
+### IntelliJ IDEA ###
+eCommerce-Application-main/eCommersApp/.idea
+eCommerce-Application-main/eCommersApp/*.iws
+eCommerce-Application-main/eCommersApp/*.iml
+eCommerce-Application-main/eCommersApp/*.ipr
+
+### NetBeans ###
+eCommerce-Application-main/eCommersApp/nbproject/private/
+eCommerce-Application-main/eCommersApp/nbbuild/
+eCommerce-Application-main/eCommersApp/dist/
+eCommerce-Application-main/eCommersApp/nbdist/
+eCommerce-Application-main/eCommersApp/.nb-gradle/
+eCommerce-Application-main/eCommersApp/build/
+!eCommerce-Application-main/eCommersApp/**/src/main/**/build/
+!eCommerce-Application-main/eCommersApp/**/src/test/**/build/
+
