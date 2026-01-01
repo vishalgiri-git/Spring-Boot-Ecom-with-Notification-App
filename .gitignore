@@ -1,5 +1,6 @@
 # Ignore all target directories globally
 target/
+
 # Allow target in eCommersApp directory
 !eCommerce-Application-main/eCommersApp/target/
 
@@ -47,4 +48,3 @@ eCommerce-Application-main/eCommersApp/.nb-gradle/
 eCommerce-Application-main/eCommersApp/build/
 !eCommerce-Application-main/eCommersApp/**/src/main/**/build/
 !eCommerce-Application-main/eCommersApp/**/src/test/**/build/
-
